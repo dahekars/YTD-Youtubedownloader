@@ -6,7 +6,7 @@ import getpass
 import time
 
 
-systemid.popen("pip install pytube -y")
+#systemid.popen("pip install pytube -y")
 username = getpass.getuser()
 
 #class Dowloader(self):
