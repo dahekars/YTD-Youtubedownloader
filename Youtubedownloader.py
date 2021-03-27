@@ -24,8 +24,9 @@ def path():# file location maintainer
 
 def video_downloader(url): #Video downloader
     print(f"Starting downloading {url}")
+    
     yt = pyd1.YouTube(url)
-    stream = yt.streams.first()
+    stream = yt.streams.filter(res=res).first()
     outputer = stream.download(output_path=path)
     print(f"Done {url}")
 
@@ -38,6 +39,7 @@ externalip = systemid.popen('wget -qO- http://ipecho.net/plain ; echo').readline
 print(f"hello {hostname},\nyour private ip is {ipaddress_internal}.\nand your public ip is {externalip}\nI hope you are a Great!!!")
 
 URL_INPUT = str(input("Kindly provide URL of you YOUTUBE Playlist/Video:\n>>"))
+res = input("RES == resolution\n>>") + "p"
 if len(URL_INPUT) == 0:
     print("Sorry!! no Input received...")
 else:
